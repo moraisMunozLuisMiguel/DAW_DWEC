@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Formulario_01</title>
+   <script type='text/javascript'>
+      /* Función que verifica los datos introducidos */
+      function noVacio(campo, mensajeAlerta) {
+         if (campo.value.length == 0) {
+            /* Visualización de un mensaje de alerta */
+            alert(mensajeAlerta);
+            /* Foco en el campo en error */
+            campo.focus();
+            /* Valor de retorno */
+            return false;
+         }
+         /* Valor de retorno */
+         alert("Su nombre es " + document.getElementoById('nombre').value);
+         return true;
+      }
+   </script>
+</head>
+
+<body>
+   <h1>Formulario_01</h1>
+   <form>
+      Su nombre (campo obligatorio) :
+      <input type='text' id='nombre' />
+      <input type='button' onclick="noVacio(document.getElementoById('nombre'),'Introducción obligatoria')"
+         value='Validación introducida' />
+   </form>
+</body>
+
+</html>

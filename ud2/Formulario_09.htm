@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <title>Formulario_09</title>
+      <script type='text/javascript'>
+         /* Función que verifica el valor seleccionado en un juego de botones de radio */
+         function selectionarDeporte(mensajeAlerta) {
+            /* Recuperación de los deportes propuestos en el formulario en una tabla */
+            var tabDeportes = document.forms.lista_deportes.deportes;
+            /* Determinación del número deportes propuestos */
+            var numeroDeportes = tabDeportes.length;
+            // alert("Número deportes : " + numeroDeportes);
+            if (numeroDeportes > 0) {
+               /* Recorrido de la tabla de los deportes propuestos */
+               var i = 0;
+               var deporteSeleccion = false;
+               while (i < numeroDeportes) {
+                  /* Verifica si el deporte es el seleccionado */
+                  if (tabDeportes[i].checked) {
+                     /* Visualización de control */
+                     alert("Su deporte favorito es " + tabDeportes[i].value);
+                     /* Modificación del booleano deporteSeleccion a true */
+                     deporteSeleccion = true;
+                  }
+                  i = i + 1;
+               }
+            }
+            /* Mensaje de alerta si no se ha seleccionado ningún deporte */
+            if (!deporteSelection) {
+               /* Mensaje de alerta */
+               alert(mensajeAlerta);
+               /* Valor de retorno */
+               return false;
+            } else {
+               /* Valor de retorno */
+               return true;
+            }
+         }
+      </script>
+   </head>
+   <body>
+      <!-- Formulario de introducción de datos HTML -->
+      <form name="lista_deportes">
+         Deporte preferido :
+         <br />
+         <input type="radio" name="deportes" value="golf">Golf</input>
+         <br>
+         <input type="radio" name="deportes" value="futbol">Futbol</input>
+         <br>
+         <input type="radio" name="deportes" value="natacion">Natación</input>
+         <br>
+         <input type="radio" name="deportes"value="tenis">Tenis</input>
+         <br>
+         <input type='button' onclick="selectionarDeporte ('Seleccione su deporte preferido')" 
+         value='Validación introducida'/>
+      </form>
+   </body>
+</html>
