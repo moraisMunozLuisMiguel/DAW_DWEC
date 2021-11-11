@@ -1,8 +1,5 @@
 /**************************************************************
-* Si se ejecuta en Chrome desde local, las cookies no se pueden crear, ya que este navegador requiere que sea
-* llamado desde http: y en local se llamaría desde file:
-***************************************************************/
-
+* Si se ejecuta en Chrome desde local, las cookies no se pueden c
 /**************************************************************
 * Cuando todos los elementos del formulario estén cargados se llamará a la función iniciar
 ***************************************************************/
