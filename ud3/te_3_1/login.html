@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Login</title>
+		<link type="text/css" rel="stylesheet" href="./css/estilo.css" />
+		<script type="text/javascript" src="./js/login.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="main">
+				<form id="formulario" method="post" name="formulario">
+					<label>Nombre de usuario:</label>
+					<input type="text" name="usuario" id="usuario"/>
+					<label>Contraseña:</label>
+					<input type="password" name="password" id="password"/>
+					<input type="button" value="ENTRAR" id="submit" onclick="validar()"/>
+				</form>
+				<p></p>
+				<div id = 'usuarioNoRegistrado'></div>
+			</div>
+		</div>
+	</body>
+</html>
