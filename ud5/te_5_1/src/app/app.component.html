@@ -1,0 +1,38 @@
+<h1>{{titulo}}</h1>
+<hr>
+<h2>{{descripcion}}</h2>
+
+<form>
+  NOMBRE: <br />
+  <input type="text" name="nombre" id="nombre" placeholder="Nombre" [(ngModel)]="cuadroNombre"><br /><br />
+  APELLIDO:<br />
+  <input type="text" name="apellido" id="apellido" placeholder="Apellido" [(ngModel)]="cuadroApellido"><br /><br />
+  RANGO:<br />
+  <input type="number" name="rango" id="rango" [(ngModel)]="cuadroRangoMaximo"><br /><br />
+  INTENTOS:<br />
+  <input type="number" name="intentos" id="intentos" [(ngModel)]="cuadroIntentos"><br /><br />
+  <input type="submit" value="INSERTAR" (click)="agregarJugador()" (click)="generarNumeroSecreto()">
+</form>
+
+<hr>
+<h2 *ngIf="saludo==true">Ongi Etorri <span>{{jugadores[0].nombre}} {{jugadores[0].apellido}}</span></h2>
+
+<form>
+  <div *ngIf="introduce==true">
+    <p>Introduce el Número a Adivinar:</p>
+    <input type="number" *ngIf="introduce==true" name="numeroIntroducido" id="numeroIntroducido"
+      [(ngModel)]="cuadroNumeroIntroducido"><br />
+    <p *ngIf="intentosRestantes==true">Intentos restantes: <span>{{jugadores[0].intentos}}</span></p><br />
+    <input type="submit" value="Enviar" (click)="agregarNumero()" (click)="comprobarRango()" (click)="numeroIntentos()"
+      (click)="acierto()">
+  </div>
+</form>
+
+<p *ngIf="despedida==true">Final de la Partida, Lista de números Introducidos:</p>
+<ul *ngIf="listaNumerosIntroducidos == true">
+  <li *ngFor="let  n of numeros;let indice=index">
+    {{(indice + 1) + ' Número introducido: ' + n.numeroIntroducido}}
+  </li>
+</ul>
+<p *ngIf="aciertoFinal==true">Has acertado, Final de la Partida</p>
+<hr>
