@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="utf-8">
+   <script type="text/javascript" src="./js/socios.js"></script>
+   <title>Página de Socios</title>
+</head>
+
+<body>
+   <h1>Página de Socios</h1>
+   <hr>
+
+   <div id="contenedorAddSocio">
+      <form id="formularioSocio">
+         <label for="lNombre">Nombre:</label><br>
+         <input type="text" id="tNombre" name="nombre" value=""><br>
+         <label for="lApellido">Apellido:</label><br>
+         <input type="text" id="tApellido" name="apellido" value=""><br><br>
+         <input type="button" id="botonAddSocio" value="AÑADIR" onclick="capturarDatosSocio()">
+      </form>
+   </div>
+   <hr>
+   <div id="contenedorBotonSocios">
+      <input type="button" id="botonPintarSocios" value="LISTA SOCIOS" onclick="pintarListaSocios()">
+   </div><br />
+   <div id="contenedorPintarSocios"></div>
+   <hr>
+</body>
+
+</html>

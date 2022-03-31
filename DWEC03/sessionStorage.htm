@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+   <title>sessionStorage</title>
+</head>
+
+<body>
+   Número de visita(s) a esta página : <div id="visitas"></div>
+   <script type='text/javascript'>
+      if (typeof sessionStorage != "undefined") {
+         var numeroVisita = sessionStorage.getItem("numeroVisita");
+         if (numeroVisita != null) {
+            numeroVisita = parseInt(numeroVisita);
+            numeroVisita++;
+         } else {
+            numeroVisita = 1;
+         }
+         sessionStorage.setItem("numeroVisita", numeroVisita);
+         document.getElementById("visitas").innerHTML = numeroVisita;
+      } else {
+         alert("sessionStorage no está soportado");
+      }
+   </script>
+</body>
+
+</html>
